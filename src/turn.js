@@ -19,6 +19,15 @@ class Turn {
             return false;
         }
     }
+
+    giveFeedback(cardObj) {
+        if (this.guess === cardObj.correctAnswer) {
+            return 'correct!';
+        } else {
+            return 'incorrect!';
+        }
+    }
+    
 }
 
 
