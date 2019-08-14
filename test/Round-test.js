@@ -49,8 +49,10 @@ beforeEach(() => {
         });
         
         it('should increment the amount of turns', function() {
-                expect(round.turns).to.be.equal(0);
-                round.takeTurn();
-                expect(round.turns).to.be.equal(1);
+            expect(round.turns).to.be.equal(0);
+            round.takeTurn();
+            expect(round.turns).to.be.equal(1);
+            round.takeTurn();
+            expect(round.turns).to.be.equal(2);
     });
 });
