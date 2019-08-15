@@ -13,15 +13,9 @@ class Round {
       if(guess !== this.returnCurrentCard().correctAnswer) {
           this.incorrectGuesses.push(this.returnCurrentCard().id)
       }
-// invoke this.makeNewTurn()
-// evaluate if guess returns true or false
-// if false, this.incorrectGuesses.push(currentCard)
-// add to turn counter
-        this.turns++;
 
+        this.turns++;
         return turn.giveFeedback();
-// how to recall this.takeTurn (where does it belong)
-// what card are we at? how many left? if none, what happens?
     }
 
     makeNewTurn(guess) {
@@ -33,7 +27,7 @@ class Round {
     }
 
     calculatePercentCorrect() {
-        // calculates a percentage of correct guesses
+        return (this.turns - this.incorrectGuesses.length) / this.turns;
     }
 
     endRound() {

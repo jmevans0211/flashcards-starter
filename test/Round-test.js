@@ -58,9 +58,18 @@ beforeEach(() => {
         });
 
         it('should push card into incorrectGuesses array when guess is incorrect', function() {
-            var feedback = round.takeTurn('wrong guess')
+            var feedback = round.takeTurn('wrong answer');
             expect(feedback).to.be.equal('incorrect!');
 
             expect(round.incorrectGuesses.length).to.be.equal(1);
         });
+
+        it('should calculate percentage of correct guesses', function() {
+            round.takeTurn('object');
+            round.takeTurn('wrong');
+            round.takeTurn('wrong');
+
+            expect(round.calculatePercentCorrect()).to.be.equal(1/3);
+        });
+
 });
