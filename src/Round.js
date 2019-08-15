@@ -32,7 +32,7 @@ class Round {
 
     endRound() {
         var percentage = calculatePercentCorrect();
-        return `**Round over!**You answered ${percentage}% of the questions correctly!`
+        return `**Round over!**You answered ${percentage}% of the questions correctly!`;
     }
 }
 
