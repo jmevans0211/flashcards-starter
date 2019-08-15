@@ -20,8 +20,8 @@ class Turn {
         }
     }
 
-    giveFeedback(cardObj) {
-        if (this.guess === cardObj.correctAnswer) {
+    giveFeedback() {
+        if (this.guess === this.currentCard.correctAnswer) {
             return 'correct!';
         } else {
             return 'incorrect!';
