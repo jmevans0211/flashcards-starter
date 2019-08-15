@@ -24,7 +24,7 @@ describe('Turn', function() {
     it('should reference the current card at play', function() {
         const card = new Card({id: 1, question: 'What allows you to define a set of related information using key-value pairs?', answers: ['object', 'array', 'function'], correctAnswer: 'object'});
         const turn = new Turn('object', card);
-        expect(turn.currentCard).to.equal(card)
+        expect(turn.currentCard).to.equal(card);
 
     });
 
@@ -72,8 +72,8 @@ describe('Turn', function() {
         const card = new Card({id: 1, question: 'What allows you to define a set of related information using key-value pairs?', answers: ['object', 'array', 'function'], correctAnswer: 'object'});
         const turn = new Turn('object', card);
 
-        turn.giveFeedback(card);
-        expect(turn.giveFeedback(card)).to.equal('correct!');
+        turn.giveFeedback();
+        expect(turn.giveFeedback()).to.equal('correct!');
     });
     
 });

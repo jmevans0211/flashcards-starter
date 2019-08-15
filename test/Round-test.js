@@ -2,8 +2,9 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const Round = require('../src/Round');
-const Deck = require('../src/Deck')
-const Card = require('../src/Card')
+const Deck = require('../src/Deck');
+const Card = require('../src/Card');
+const Turn = require('../src/Turn');
 
 var card1, card2, card3, deck, round;
 beforeEach(() => {
@@ -54,5 +55,12 @@ beforeEach(() => {
             expect(round.turns).to.be.equal(1);
             round.takeTurn();
             expect(round.turns).to.be.equal(2);
-    });
+        });
+
+        it('should push card into incorrectGuesses array when guess is incorrect', function() {
+            var feedback = round.takeTurn('wrong guess')
+            expect(feedback).to.be.equal('incorrect!');
+
+            expect(round.incorrectGuesses.length).to.be.equal(1);
+        });
 });
