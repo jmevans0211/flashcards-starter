@@ -22,16 +22,16 @@ class Round {
         return new Turn(guess, this.returnCurrentCard());
     }
 
-    returnCurrentCard(deck) {
+    returnCurrentCard() {
         return this.deck[this.turns];
     }
 
     calculatePercentCorrect() {
-        return (this.turns - this.incorrectGuesses.length) / this.turns;
+        return 100 *((this.turns - this.incorrectGuesses.length) / this.turns);
     }
 
     endRound() {
-        var percentage = calculatePercentCorrect();
+        var percentage = this.calculatePercentCorrect();
         return `**Round over!**You answered ${percentage}% of the questions correctly!`;
     }
 }

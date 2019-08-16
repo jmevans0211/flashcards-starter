@@ -69,7 +69,16 @@ beforeEach(() => {
             round.takeTurn('wrong');
             round.takeTurn('wrong');
 
-            expect(round.calculatePercentCorrect()).to.be.equal(1/3);
+            expect(round.calculatePercentCorrect()).to.be.equal(100 * (1/3));
         });
+
+        it('should return percentage message at end of round', function() {
+            
+            round.takeTurn('object');
+            round.takeTurn('wrong');
+            // round.endRound();
+
+            expect(round.endRound()).to.be.equal(`**Round over!**You answered 50% of the questions correctly!`)
+        })
 
 });
