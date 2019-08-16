@@ -45,8 +45,8 @@ beforeEach(() => {
         });
 
         it('should return the first card in the deck', function() {
-            round.returnCurrentCard(deck);
-            expect(round.returnCurrentCard(deck)).to.eql(card1);
+            round.returnCurrentCard();
+            expect(round.returnCurrentCard()).to.eql(card1);
         });
         
         it('should increment the amount of turns', function() {
@@ -76,7 +76,6 @@ beforeEach(() => {
             
             round.takeTurn('object');
             round.takeTurn('wrong');
-            // round.endRound();
 
             expect(round.endRound()).to.be.equal(`**Round over!**You answered 50% of the questions correctly!`)
         })

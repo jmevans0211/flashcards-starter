@@ -10,7 +10,7 @@ class Round {
     takeTurn(guess) {
       var turn = this.makeNewTurn(guess);
 
-      if(guess !== this.returnCurrentCard().correctAnswer) {
+      if (guess !== this.returnCurrentCard().correctAnswer) {
           this.incorrectGuesses.push(this.returnCurrentCard().id)
       }
 
@@ -27,12 +27,12 @@ class Round {
     }
 
     calculatePercentCorrect() {
-        return 100 *((this.turns - this.incorrectGuesses.length) / this.turns);
+        return 100 * ((this.turns - this.incorrectGuesses.length) / this.turns);
     }
 
     endRound() {
         var percentage = this.calculatePercentCorrect();
-        return `**Round over!**You answered ${percentage}% of the questions correctly!`;
+        console.log(`**Round over!**You answered ${percentage}% of the questions correctly!`);
     }
 }
 

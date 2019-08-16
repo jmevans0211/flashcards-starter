@@ -2,10 +2,10 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const Game = require('../src/Game');
-const Round = require('../src/Round');
-const Deck = require('../src/Deck');
-const Card = require('../src/Card');
-const Turn = require('../src/Turn');
+// const Round = require('../src/Round');
+// const Deck = require('../src/Deck');
+// const Card = require('../src/Card');
+// const Turn = require('../src/Turn');
 
 describe('Game', function() {
 
@@ -21,7 +21,7 @@ describe('Game', function() {
 
     it('should increment rounds', function() {
         var game = new Game();
-        expect(game.round).to.equal(0) 
+        expect(game.round).to.equal(0);
         game.start();
         expect(game.round).to.equal(1);
     });
@@ -30,7 +30,6 @@ describe('Game', function() {
         var game = new Game();
         
         game.start();
-      
         expect(game.deck.countCards()).to.equal(30);
     });
 
